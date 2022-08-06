@@ -1,8 +1,19 @@
+import dashboard from "./views/dashboard";
+import Posts from "./views/Posts";
+import Settings from "./views/Settings";
+
+const navigateTo = url => {
+    history.pushState(null,null,url);
+    router();
+}
+
+
 const router = async () => {
     const routes = [
-        {path: "/", view: () => console.log('viewing dashboard')},
-        {path: "/posts", view: () => console.log('viewing Posts')},
-        {path: "/settings", view: () => console.log('viewing Dashboard')},
+        {path: "/", view: dashboard},
+        {path: "/posts", view: Posts},
+        {path: "/settings", view: Settings}
+        
     ];
 
     const potentialMatches = routes.map(route => {
@@ -12,18 +23,29 @@ const router = async () => {
         }
     });
 
-    let match = potentialMatches.find(potentialMatches => potentialMatches.isMatch)
+    let match = potentialMatches.find(potentialMatches => potentialMatches.isMatch);
 
     if(!match){
         match = {
-            route: routes[0]
+            route: routes[0],
+            isMatch: true
         };
     }
+    const view = new match.route.view();
 
-    console.log(potentialMatches)
+    document.querySelector('#app').innerHTML = await view.getHtml();
+
+    console.log(match.route.view());
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {   
+    document.body.addEventListener("click", e =>{
+
+        if(e.target.matches("[data-link]")){
+            e.preventDefault();
+            navigateTo(e.target.href);
+        }
+    })
 
     router();
 
