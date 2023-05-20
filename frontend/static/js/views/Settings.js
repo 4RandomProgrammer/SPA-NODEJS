@@ -10,7 +10,6 @@ export default class extends AbstractView {
         return `
             <h1>Settings</h1>
             <p>You are viewing settings</p>
-        
         `;
     }
 }
