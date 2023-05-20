@@ -19,5 +19,8 @@
   "homepage": "https://github.com/4RandomProgrammer/SPA-NODEJS#readme",
   "dependencies": {
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
   }
 }
