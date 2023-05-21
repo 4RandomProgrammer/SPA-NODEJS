@@ -25,7 +25,7 @@ const router = async () => {
         }
     });
 
-    console.log(potentialMatches.route)
+    
 
     let match = potentialMatches.find(potentialMatch => potentialMatch.result !== null);
 

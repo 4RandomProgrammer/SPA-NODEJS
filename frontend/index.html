@@ -5,22 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WAAAAAAAAAAAA</title>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="/dist/output.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 <body>
     <div class="flex">
-        <div class="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-gray-900 text-white">
-            <nav class="nav">
-                <a href="/" class="nav__link" data-link="">Dashboard</a>
-                <a href="/posts" class="nav__link" data-link="">Posts</a>
-                <a href="/settings" class="nav__link" data-link="">Settings</a>
-            </nav>
-        </div>
+        <nav class="fixed top-0 left-0 h-screen m-0 flex flex-col bg-gray-900 text-white">
+
+            <div class="group relative flex items-center justify-center p-4 h-12 mt-2 mb-2 mx-auto bg-gray-800 text-green-500 hover:bg-green-600 hover:text-white rounded-3xl hover:rounded-xl transition-all">
+                <a href="/" class="nav__link object-fill" data-link="">Dashboard</a>
+                
+                <p class="absolute w-auto p-2 m-2 min-w-max left-28 rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Go to Dashboard</p>
+
+            </div>
+
+            <div class="group relative flex items-center justify-center p-4 h-12 mt-2 mb-2 mx-auto bg-gray-800 text-green-500 hover:bg-green-600 hover:text-white rounded-3xl hover:rounded-xl transition-all">
+                <a href="/posts" class="nav__link object-fill" data-link="">Posts</a>
+                <p class="absolute w-auto p-2 m-2 min-w-max left-24 rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Go to posts</p>
+            </div>
+
+            <div class="group relative flex items-center justify-center p-4 h-12 mt-2 mb-2 mx-auto bg-gray-800 text-green-500 hover:bg-green-600 hover:text-white rounded-3xl hover:rounded-xl transition-all">
+
+                <a href="/settings" class="nav__link object-fill" data-link="">
+                    Settings
+                </a>
+
+                <p class="absolute w-auto p-2 m-2 min-w-max left-24 rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Go to settings</p>
+
+            </div>
+        </nav>
+       
+
     </div>
     
-    <div id="app">
+    <div class="pl-32" id="app">
         
     </div>
     <script type="module" src="/static/js/index.js"></script>
